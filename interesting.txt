@@ -1,0 +1,9 @@
+Here I'll save some different tools I'm not currently using but are interesting and maybe in the future I install'em.
+
+    Harpoon - To navigate too fast between different files when u are working in both.
+
+    UdoTree - I think you can know what this do by its name :D.
+
+    GitIntegration - Same.
+
+
