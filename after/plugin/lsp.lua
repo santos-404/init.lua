@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "pylsp", "ts_ls", "jdtls" },
+    ensure_installed = { "gopls", "pylsp", "tsp_server", "jdtls" },
 })
 
 -- LANGUAGES. THE COMPLETE LIST IS ON: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jdtls
