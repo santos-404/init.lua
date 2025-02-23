@@ -37,5 +37,10 @@ return require('packer').startup(function(use)
 
   use { 'L3MON4D3/LuaSnip', requires = { 'rafamadriz/friendly-snippets' } }
 
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons' } -- Optional for icons
+  }
+
 
 end)

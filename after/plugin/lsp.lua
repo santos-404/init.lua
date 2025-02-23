@@ -38,6 +38,22 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = { "gopls", "pylsp", "tsp_server", "jdtls" },
 })
+require("mason-lspconfig").setup_handlers({
+    -- Will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    --
+    function(server_name) -- default handler (optional)
+        -- https://github.com/neovim/nvim-lspconfig/pull/3232
+        if server_name == "tsserver" then
+            server_name = "ts_ls"
+        end
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        require("lspconfig")[server_name].setup({
+
+            capabilities = capabilities,
+        })
+    end,
+})
 
 -- LANGUAGES. THE COMPLETE LIST IS ON: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jdtls
 require'lspconfig'.golangci_lint_ls.setup{}
@@ -53,7 +69,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
     snippet = {
         expand = function(args)
-            luasnip.lsp_expand(args.body)
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -64,5 +80,7 @@ cmp.setup({
     sources = {
         { name = "nvim_lsp" },
         { name = "buffer" },
-    },
+        { name = "path" },
+        { name = "luasnip" },
+    }
 })
