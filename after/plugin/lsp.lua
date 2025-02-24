@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "pylsp", "tsp_server", "jdtls" },
+    ensure_installed = { "gopls", "pylsp", "tsp_server", "jdtls", "tailwindcss", "cssls", "html", "astro"},
 })
 require("mason-lspconfig").setup_handlers({
     -- Will be called for each installed server that doesn't have
@@ -83,4 +83,9 @@ cmp.setup({
         { name = "path" },
         { name = "luasnip" },
     }
+})
+
+require("lspconfig").html.setup({
+    filetypes = { "html", "javascriptreact", "typescriptreact", "astro" },
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
