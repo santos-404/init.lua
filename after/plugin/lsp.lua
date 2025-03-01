@@ -89,3 +89,17 @@ require("lspconfig").html.setup({
     filetypes = { "html", "javascriptreact", "typescriptreact", "astro" },
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
+
+require'lspconfig'.pylsp.setup{
+    settings = {
+        pylsp = {
+            plugins = {
+                flake8 = { enabled = false },
+                pycodestyle = { enabled = false },
+                mccabe = { enabled = false },
+                pydocstyle = { enabled = false },
+                pylint = { enabled = false },
+            }
+        }
+    }
+}
