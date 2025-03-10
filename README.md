@@ -2,6 +2,8 @@
 
 This repository contains my personal Neovim setup, including plugins, key mappings, and LSP configurations. 
 
+> I started adding doc about my config, but this doc is not mantained anymore. You can figure out by yourself how everything works :( (sorry). 
+
 ## Folder Structure
 ```
 .
