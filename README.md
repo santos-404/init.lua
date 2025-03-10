@@ -25,7 +25,7 @@ This repository contains my personal Neovim setup, including plugins, key mappin
 └── old_setup.vim            # Backup of previous Vim setup
 ```
 
-## Features
+## What things can you do?
 - **LSP Support** (Go, Python, JavaScript, Java, etc.)
 - **Autocompletion** (via `nvim-cmp`)
 - **Fuzzy Finder** (`telescope.nvim`)
@@ -51,10 +51,3 @@ Some useful custom mappings:
 There are two more mappings for the Telescope plugin (/after/plugins/telescope.lua):
 - `<leader>ff` - Find by file name using Telescope
 - `<C-S-f>` - Open the Telescope grep tool for searching within files
-
-## License
-This configuration is provided as-is. Feel free to fork and customize it!
-
----
-Contributions and suggestions are welcome! 
-
