@@ -14,15 +14,26 @@ return require('packer').startup(function(use)
   }
 
   use({
-	  "folke/tokyonight.nvim",
-	  config = function()
-		  require('tokyonight').setup({
-			  -- ...
-		  })
+      'projekt0n/github-nvim-theme',
+      config = function()
+          require('github-theme').setup({
+              -- ...
+          })
 
-		  vim.cmd('colorscheme tokyonight')
-	  end
+          vim.cmd('colorscheme github_dark')
+      end
   })
+
+  -- use({
+  --  "folke/tokyonight.nvim",
+  --  config = function()
+  --   require('tokyonight').setup({
+  -- 	  -- ...
+  --   })
+  --
+  --   vim.cmd('colorscheme tokyonight')
+  --  end
+  -- })
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
