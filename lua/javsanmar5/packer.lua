@@ -13,17 +13,19 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-      'projekt0n/github-nvim-theme',
-      config = function()
-          require('github-theme').setup({
-              -- ...
-          })
-
-          vim.cmd('colorscheme github_dark')
-      end
-  })
-
+  use { "ellisonleao/gruvbox.nvim" }
+  -- GITHUB THEME
+  -- use({
+  --     'projekt0n/github-nvim-theme',
+  --     config = function()
+  --         require('github-theme').setup({
+  --             -- ...
+  --         })
+  --
+  --         vim.cmd('colorscheme github_dark')
+  --     end
+  -- })
+  -- TOKYONIGHT THEME
   -- use({
   --  "folke/tokyonight.nvim",
   --  config = function()
