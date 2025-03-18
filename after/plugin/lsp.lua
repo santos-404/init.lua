@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "pylsp", "tsp_server", "jdtls", "tailwindcss", "cssls", "html", "astro"},
+    ensure_installed = { "gopls", "pylsp", "tsp_server", "jdtls", "tailwindcss", "cssls", "html", "astro", "clangd"},
 })
 require("mason-lspconfig").setup_handlers({
     -- Will be called for each installed server that doesn't have
@@ -60,6 +60,7 @@ require'lspconfig'.golangci_lint_ls.setup{}
 require'lspconfig'.pylsp.setup{}
 require'lspconfig'.quick_lint_js.setup{}
 require'lspconfig'.jdtls.setup{}
+
 
 local cmp = require('cmp')
 local luasnip = require("luasnip")
@@ -102,4 +103,15 @@ require'lspconfig'.pylsp.setup{
             }
         }
     }
+}
+
+require'lspconfig'.clangd.setup{
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--suggest-missing-includes",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+    },
 }
