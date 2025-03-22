@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "pylsp", "tsp_server", "jdtls", "tailwindcss", "cssls", "html", "astro", "clangd"},
+    ensure_installed = { "gopls", "tsp_server", "jdtls", "tailwindcss", "cssls", "html", "astro", "clangd"},
 })
 require("mason-lspconfig").setup_handlers({
     -- Will be called for each installed server that doesn't have
@@ -57,7 +57,6 @@ require("mason-lspconfig").setup_handlers({
 
 -- LANGUAGES. THE COMPLETE LIST IS ON: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jdtls
 require'lspconfig'.golangci_lint_ls.setup{}
-require'lspconfig'.pylsp.setup{}
 require'lspconfig'.quick_lint_js.setup{}
 require'lspconfig'.jdtls.setup{}
 
@@ -90,20 +89,6 @@ require("lspconfig").html.setup({
     filetypes = { "html", "javascriptreact", "typescriptreact", "astro" },
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
-
-require'lspconfig'.pylsp.setup{
-    settings = {
-        pylsp = {
-            plugins = {
-                flake8 = { enabled = false },
-                pycodestyle = { enabled = false },
-                mccabe = { enabled = false },
-                pydocstyle = { enabled = false },
-                pylint = { enabled = false },
-            }
-        }
-    }
-}
 
 require'lspconfig'.clangd.setup{
     capabilities = require("cmp_nvim_lsp").default_capabilities(),

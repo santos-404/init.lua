@@ -4,6 +4,35 @@ This repository contains my personal Neovim setup, including plugins, key mappin
 
 > I started adding doc about my config, but this doc is not mantained anymore. You can figure out by yourself how everything works :( (sorry). 
 
+
+## How to install it?
+
+```bash
+mkdir -p ~/.config/nvim
+cd ~/.config/nvim
+```
+
+You will first need to install packer:
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+```
+
+Then clone this on the folder nvim:
+```bash
+git clone https://github.com/javsanmar5/init.lua . 
+```
+
+Install everything:
+```bash
+nvim lua/javsanmar5/packer.lua
+```
+```vim
+:PackerSync
+```
+
+> You might have problems with the LSPs. If you don't have one of the languages you will have to install it or remove from the ensure_installed
+
 ## Folder Structure
 ```
 .
