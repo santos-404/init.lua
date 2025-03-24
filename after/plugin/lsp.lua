@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "ts_ls", "jdtls", "tailwindcss", "cssls", "html", "astro", "clangd"},
+    ensure_installed = { "gopls", "ts_ls", "jdtls", "tailwindcss", "cssls", "html", "astro", "clangd", "pylsp"},
 })
 require("mason-lspconfig").setup_handlers({
     -- Will be called for each installed server that doesn't have
@@ -99,4 +99,18 @@ require'lspconfig'.clangd.setup{
         "--clang-tidy",
         "--header-insertion=iwyu",
     },
+}
+
+require'lspconfig'.pylsp.setup{
+    settings = {
+        pylsp = {
+            plugins = {
+                flake8 = { enabled = false },
+                pycodestyle = { enabled = false },
+                mccabe = { enabled = false },
+                pydocstyle = { enabled = false },
+                pylint = { enabled = false },
+            }
+        }
+    }
 }
