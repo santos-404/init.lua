@@ -56,7 +56,7 @@ require("mason-lspconfig").setup_handlers({
 })
 
 -- LANGUAGES. THE COMPLETE LIST IS ON: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jdtls
-require'lspconfig'.golangci_lint_ls.setup{}
+require 'lspconfig'.gopls.setup({})
 require'lspconfig'.quick_lint_js.setup{}
 require'lspconfig'.jdtls.setup{}
 
