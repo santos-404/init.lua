@@ -10,5 +10,6 @@ require('telescope').setup({
     sorting_strategy = "ascending",
     winblend = 10,  -- Makes the background slightly transparent
     color_devicons = true,
+    file_ignore_patterns = { "node_modules", "venv", ".venv" }
   }
 })
