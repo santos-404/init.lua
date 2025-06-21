@@ -44,8 +44,12 @@ return require('packer').startup(function(use)
   use({'hrsh7th/cmp-nvim-lsp'})
 
   use {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+      "williamboman/mason.nvim",
+      tag = "v1.x",  
+  }
+  use {
+      "williamboman/mason-lspconfig.nvim",
+      tag = "v1.x",  
   }
 
   use { 'L3MON4D3/LuaSnip', requires = { 'rafamadriz/friendly-snippets' } }
