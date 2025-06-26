@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "ts_ls", "jdtls", "tailwindcss", "cssls", "html", "astro", "clangd", "pylsp"},
+    ensure_installed = { "gopls", "ts_ls", "jdtls", "tailwindcss", "cssls", "html", "astro", "pylsp"},
 })
 require("mason-lspconfig").setup_handlers({
     -- Will be called for each installed server that doesn't have
