@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "ts_ls", "jdtls", "tailwindcss", "cssls", "html", "astro", "pylsp"},
+    ensure_installed = { "gopls", "ts_ls", "jdtls", "tailwindcss", "cssls", "html", "astro", "pylsp", "omnisharp"},
 })
 require("mason-lspconfig").setup_handlers({
     -- Will be called for each installed server that doesn't have
@@ -113,4 +113,12 @@ require'lspconfig'.pylsp.setup{
             }
         }
     }
+}
+
+require'lspconfig'.omnisharp.setup {  -- this is c_sharp
+    cmd = { "OmniSharp" }, 
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    enable_roslyn_analyzers = true,
+    enable_import_completion = true,
+    organize_imports_on_format = true,
 }
