@@ -39,18 +39,18 @@ return require('packer').startup(function(use)
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
-  use({'neovim/nvim-lspconfig'})
+  -- use({'neovim/nvim-lspconfig'})
   use({'hrsh7th/nvim-cmp'})
   use({'hrsh7th/cmp-nvim-lsp'})
 
-  use {
-      "williamboman/mason.nvim",
-      tag = "v1.x",  
-  }
-  use {
-      "williamboman/mason-lspconfig.nvim",
-      tag = "v1.x",  
-  }
+  -- use {
+  --     "williamboman/mason.nvim",
+  --     tag = "v1.x",  
+  -- }
+  -- use {
+  --     "williamboman/mason-lspconfig.nvim",
+  --     tag = "v1.x",  
+  -- }
 
   use { 'L3MON4D3/LuaSnip', requires = { 'rafamadriz/friendly-snippets' } }
 
