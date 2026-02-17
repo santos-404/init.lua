@@ -8,7 +8,7 @@ vim.keymap.set("v", "d", '"_d', { noremap = true })
 
 vim.keymap.set("n", "<leader>go", ":GoRun<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>js", ":!node %<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>py", ":!python %<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>py", ":!python3 %<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<A-k>", ":m-2<CR>==", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-j>", ":m+1<CR>==", { noremap = true, silent = true })

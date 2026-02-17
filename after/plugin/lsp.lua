@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local opts = { buffer = event.buf }
 
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', 'gd', require('omnisharp_extended').lsp_definition, opts)
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
@@ -32,7 +32,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept completion
+        ["<CR>"] = cmp.mapping.confirm({ select = true }), 
     }),
     sources = {
         { name = "nvim_lsp" },
