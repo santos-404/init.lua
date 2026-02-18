@@ -5,7 +5,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local opts = { buffer = event.buf }
 
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gd', require('omnisharp_extended').lsp_definition, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        -- vim.keymap.set('n', 'gd', require('omnisharp_extended').lsp_definition, opts)
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
@@ -44,7 +45,7 @@ cmp.setup({
 
 
 -- LANGUAGES 
-vim.lsp.enable('omnisharp')
-vim.lsp.enable('pylsp')
-vim.lsp.enable('ts_ls')
-
+-- vim.lsp.enable('omnisharp')
+-- vim.lsp.enable('pylsp')
+-- vim.lsp.enable('ts_ls')
+vim.lsp.enable('gopls')
