@@ -45,7 +45,7 @@ cmp.setup({
 
 
 -- LANGUAGES 
--- vim.lsp.enable('omnisharp')
--- vim.lsp.enable('pylsp')
--- vim.lsp.enable('ts_ls')
+vim.lsp.enable('omnisharp')
+vim.lsp.enable('pylsp')
+vim.lsp.enable('ts_ls')
 vim.lsp.enable('gopls')
