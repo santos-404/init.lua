@@ -1,82 +1,38 @@
 # Neovim Configuration
 
-This repository contains my personal Neovim setup, including plugins, key mappings, and LSP configurations. 
+My personal Neovim setup. Of course this configuration is heavily opinionated and built around the languages I work with and the workflow I prefer. Feel free to use it as a base, but expect to tweak things.
 
-> I started adding doc about my config, but this doc is not mantained anymore. You can figure out by yourself how everything works :( (sorry). 
-
-
-## How to install it?
+## Installation
 
 ```bash
-mkdir -p ~/.config/nvim
+git clone https://github.com/santos-404/init.lua ~/.config/nvim
 cd ~/.config/nvim
 ```
 
-You will first need to install packer:
+From here you have two options:
+
+### Option A; Automated
+
 ```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
+./setup.sh
 ```
 
-Then clone this on the folder nvim:
-```bash
-git clone https://github.com/javsanmar5/init.lua . 
-```
+The script installs packer.nvim if needed and runs `:PackerSync` headlessly. LSPs are not installed automatically you can refer to [SETUP.md](SETUP.md) for details on that.
 
-Install everything:
-```bash
-nvim lua/javsanmar5/packer.lua
-```
-```vim
-:PackerSync
-```
+### Option B; Manual
 
-> You might have problems with the LSPs. If you don't have one of the languages you will have to install it or remove from the ensure_installed
+Follow [SETUP.md](SETUP.md) step by step.
 
-## Folder Structure
-```
-.
-├── after
-│   └── plugin
-│       ├── colors.lua       # Theme settings
-│       ├── lsp.lua          # LSP configurations
-│       ├── telescope.lua    # Fuzzy finder setup
-│       └── treesitter.lua   # Syntax highlighting
-├── init.lua                 # Main Neovim configuration file
-├── lua
-│   └── javsanmar5
-│       ├── init.lua         # Additional settings
-│       ├── packer.lua       # Plugin manager setup
-│       ├── remap.lua        # Custom key mappings
-│       └── set.lua          # General settings
-├── plugin
-│   └── packer_compiled.lua  # Auto-generated plugin loader
-└── old_setup.vim            # Backup of previous Vim setup
-```
+---
 
-## What things can you do?
-- **LSP Support** (Go, Python, JavaScript, Java, etc.)
-- **Autocompletion** (via `nvim-cmp`)
-- **Fuzzy Finder** (`telescope.nvim`)
-- **Syntax Highlighting** (`nvim-treesitter`)
-- **Git Integration** (`gitsigns.nvim`)
-- **Custom Keybindings** (defined in `remap.lua`)
+## Finding your way around
 
-## Key Mappings
-Some useful custom mappings:
-| Keybinding    | Action                              |
-|---------------|-------------------------------------|
-| `<leader>go`  | Run Go program                      |
-| `<leader>js`  | Run JavaScript file                 |
-| `<leader>py`  | Run Python file                     |
-| `<A-k>`       | Move line up                        |
-| `<A-j>`       | Move line down                      |
-| `<C-b>`       | Open file explorer (`:Ex`)          |
-| `d`           | Delete without copying (use black hole register) |
-| `x`           | Delete without copying (use black hole register) |
-| `<A-k>` (visual) | Move selection up                   |
-| `<A-j>` (visual) | Move selection down                 |
+**Keybindings**: `lua/javsanmar5/remap.lua` for general mappings. Plugin-specific ones live next to their setup in `after/plugin/`.
 
-There are two more mappings for the Telescope plugin (/after/plugins/telescope.lua):
-- `<leader>ff` - Find by file name using Telescope
-- `<C-S-f>` - Open the Telescope grep tool for searching within files
+**Plugins**: add or remove from `lua/javsanmar5/packer.lua`, then run `:PackerSync`.
+
+**Editor settings**: `lua/javsanmar5/set.lua`. Things like tab size, line numbers, clipboard, scroll offset. Nothing fancy, just the usual vim options.
+
+**LSP keybindings and completion**: all in `after/plugin/lsp.lua`. That's also where you toggle which servers are active.
+
+**Adding a new LSP**: drop a config file in `lsp/` (look at the existing ones, they're tiny) and add a `vim.lsp.enable('name')` line in `after/plugin/lsp.lua`.
