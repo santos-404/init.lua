@@ -27,11 +27,11 @@ Follow [SETUP.md](SETUP.md) step by step.
 
 ## Finding your way around
 
-**Keybindings**: `lua/javsanmar5/remap.lua` for general mappings. Plugin-specific ones live next to their setup in `after/plugin/`.
+**Keybindings**: `lua/santos-404/remap.lua` for general mappings. Plugin-specific ones live next to their setup in `after/plugin/`.
 
-**Plugins**: add or remove from `lua/javsanmar5/packer.lua`, then run `:PackerSync`.
+**Plugins**: add or remove from `lua/santos-404/packer.lua`, then run `:PackerSync`.
 
-**Editor settings**: `lua/javsanmar5/set.lua`. Things like tab size, line numbers, clipboard, scroll offset. Nothing fancy, just the usual vim options.
+**Editor settings**: `lua/santos-404/set.lua`. Things like tab size, line numbers, clipboard, scroll offset. Nothing fancy, just the usual vim options.
 
 **LSP keybindings and completion**: all in `after/plugin/lsp.lua`. That's also where you toggle which servers are active.
 

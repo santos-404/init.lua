@@ -1,4 +1,4 @@
-require("javsanmar5")
+require("santos-404")
 
 -- Thanks for reading :D
 

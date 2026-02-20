@@ -12,7 +12,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 Open the packer file inside Neovim and run `:PackerSync`:
 
 ```bash
-nvim lua/javsanmar5/packer.lua
+nvim lua/santos-404/packer.lua
 ```
 ```vim
 :PackerSync
