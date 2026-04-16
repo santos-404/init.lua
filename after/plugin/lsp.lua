@@ -1,3 +1,10 @@
+-- MASON: easy LSP server installation via :Mason
+require('mason').setup()
+require('mason-lspconfig').setup({
+    automatic_enable = true,  -- auto-enable servers installed via Mason
+})
+
+
 -- KEYBINDS
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
@@ -33,7 +40,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }), 
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
     }),
     sources = {
         { name = "nvim_lsp" },
@@ -42,12 +49,3 @@ cmp.setup({
         { name = "luasnip" },
     }
 })
-
-
--- LANGUAGES 
-vim.lsp.enable('pylsp')
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('gopls')
--- vim.lsp.enable('csharp-ls')
-vim.lsp.enable('omnisharp')
-vim.lsp.enable('phpactor')
