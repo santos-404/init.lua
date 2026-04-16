@@ -3,3 +3,6 @@
 -- Add any additional options here
 vim.opt.relativenumber = true
 vim.opt.guicursor = "n-v-c-i-ci-ve-r-cr-o:block"
+vim.opt.foldcolumn = "0"
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4

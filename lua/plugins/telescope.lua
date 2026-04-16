@@ -1,10 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
-    {
-      "<leader>ff",
-      function() require("telescope.builtin").live_grep() end,
-      desc = "Live Grep",
-    },
+    { "<leader>ff", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
   },
 }

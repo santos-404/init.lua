@@ -1,1 +1,8 @@
-/home/santos-404/.config/omarchy/current/theme/neovim.lua
+return {
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "gruvbox",
+		},
+	},
+}

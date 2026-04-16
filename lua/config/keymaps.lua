@@ -21,6 +21,18 @@ vim.keymap.set("n", "<leader>go", ":GoRun<CR>", { noremap = true, silent = true 
 vim.keymap.set("n", "<leader>js", ":!node %<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>py", ":!python3 %<CR>", { noremap = true, silent = true })
 
+-- Remove LazyVim default git keymaps (replaced by fugitive)
+pcall(vim.keymap.del, "n", "<leader>gg")
+pcall(vim.keymap.del, "n", "<leader>gG")
+pcall(vim.keymap.del, "n", "<leader>gb")
+pcall(vim.keymap.del, "n", "<leader>gB")
+pcall(vim.keymap.del, { "n", "x" }, "<leader>gB")
+pcall(vim.keymap.del, "n", "<leader>gf")
+pcall(vim.keymap.del, "n", "<leader>gl")
+pcall(vim.keymap.del, "n", "<leader>gL")
+pcall(vim.keymap.del, "n", "<leader>gY")
+pcall(vim.keymap.del, { "n", "x" }, "<leader>gY")
+
 -- Diagnostics
 vim.keymap.set("n", "]]", function() vim.diagnostic.jump({ count = 1 }) end, { desc = "Next diagnostic" })
 vim.keymap.set("n", "[[", function() vim.diagnostic.jump({ count = -1 }) end, { desc = "Prev diagnostic" })
