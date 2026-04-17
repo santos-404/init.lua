@@ -37,7 +37,11 @@ require('lualine').setup({
             { 'location', padding = { left = 0, right = 1 } },
         },
         lualine_z = {
-            function() return os.date('%R') end,
+            function()
+                local reg = vim.fn.reg_recording()
+                if reg ~= '' then return 'recording @' .. reg end
+                return os.date('%R')
+            end,
         },
     },
 })
