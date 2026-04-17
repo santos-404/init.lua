@@ -10,10 +10,10 @@ vim.keymap.set("n", "<leader>go", ":GoRun<CR>", { noremap = true, silent = true 
 vim.keymap.set("n", "<leader>js", ":!node %<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>py", ":!python3 %<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<A-k>", ":m-2<CR>==", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-j>", ":m+1<CR>==", { noremap = true, silent = true })
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-S-k>", ":m-2<CR>==", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-S-j>", ":m+1<CR>==", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-S-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-S-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
 vim.keymap.set("n", "]]", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set("n", "[[", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
