@@ -250,6 +250,11 @@ _G.packer_plugins = {
     path = "/home/santos/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["roslyn.nvim"] = {
+    loaded = true,
+    path = "/home/santos/.local/share/nvim/site/pack/packer/start/roslyn.nvim",
+    url = "https://github.com/seblyng/roslyn.nvim"
+  },
   ["smear-cursor.nvim"] = {
     loaded = true,
     path = "/home/santos/.local/share/nvim/site/pack/packer/start/smear-cursor.nvim",

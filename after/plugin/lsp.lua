@@ -1,9 +1,6 @@
 -- MASON: easy LSP server installation via :Mason
-require('mason').setup()
-require('mason-lspconfig').setup({
-    automatic_enable = true,  -- auto-enable servers installed via Mason
-})
-
+require('mason').setup({ registries = { "github:mason-org/mason-registry", "github:Crashdummyy/mason-registry", }, })
+require('mason-lspconfig').setup({ automatic_enable = true,  -- auto-enable servers installed via Mason })
 
 -- KEYBINDS
 vim.api.nvim_create_autocmd('LspAttach', {
