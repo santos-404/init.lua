@@ -1,4 +1,7 @@
 require('noice').setup({
+    cmdline = {
+        enabled = false,
+    },
     lsp = {
         override = {
             ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -24,7 +27,7 @@ require('noice').setup({
     },
     presets = {
         bottom_search = true,
-        command_palette = true,  -- commands appear in the middle-top
+        command_palette = false,
         long_message_to_split = true,
     },
 })
