@@ -1,6 +1,17 @@
 require('noice').setup({
     cmdline = {
-        enabled = false,
+        enabled = true,
+        view = "cmdline_popup",
+        opts = {
+            position = {
+                row = "10%",
+                col = "50%",
+            },
+            size = {
+                width = 60,
+                height = "auto",
+            },
+        },
     },
     lsp = {
         override = {
