@@ -6,7 +6,7 @@ return require("packer").startup(function(use)
     use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
 
     use({ "Hoffs/omnisharp-extended-lsp.nvim" })
-    use({ "seblyng/roslyn.nvim" })
+    -- use({ "seblyng/roslyn.nvim" })
 
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
@@ -33,6 +33,10 @@ return require("packer").startup(function(use)
 
     use({ "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" } })
 
+    use({ "nvim-mini/mini.indentscope" })
+
+    use({ "folke/flash.nvim" })
+
     -- Themes
     use({ "ellisonleao/gruvbox.nvim" })
     use({ "folke/tokyonight.nvim" })
@@ -54,7 +58,4 @@ return require("packer").startup(function(use)
     use({ "omacom-io/lumon.nvim" })
     use({ "gthelding/monokai-pro.nvim" }) 
 
-    use({ "nvim-mini/mini.indentscope" })
-
-    use({ "folke/flash.nvim" })
 end)

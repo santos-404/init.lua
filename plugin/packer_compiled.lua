@@ -115,6 +115,11 @@ _G.packer_plugins = {
     path = "/Users/santos/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
+  firenvim = {
+    loaded = true,
+    path = "/home/santos/.local/share/nvim/site/pack/packer/start/firenvim",
+    url = "https://github.com/glacambre/firenvim"
+  },
   ["flash.nvim"] = {
     loaded = true,
     path = "/Users/santos/.local/share/nvim/site/pack/packer/start/flash.nvim",
