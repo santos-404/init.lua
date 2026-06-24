@@ -1,3 +1,5 @@
+if vim.g.started_by_firenvim then return end
+
 require('noice').setup({
     cmdline = {
         enabled = false,
