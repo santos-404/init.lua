@@ -53,6 +53,21 @@ function UpdateColor(color)
     vim.api.nvim_set_hl(0, "LineNrBelow",           { fg = "#aaaaaa", bg = "none" })
     vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = "#aaaaaa", bg = "NONE" })
 
+    for _, group in ipairs({
+        "@lsp.type.function",
+        "@lsp.type.method",
+        "@lsp.typemod.function.declaration",
+        "@lsp.typemod.method.declaration",
+        "@lsp.typemod.function.definition",
+        "@lsp.typemod.method.definition",
+    }) do
+        local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = group, link = false })
+        if ok then
+            hl.bold = false
+            vim.api.nvim_set_hl(0, group, hl)
+        end
+    end
+
     vim.opt.termguicolors = true
 end
 
