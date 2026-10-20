@@ -39,6 +39,7 @@ function UpdateColor(color)
     local entry = color and { colorscheme = color }
         or get_omarchy_entry()
         or { colorscheme = "gruvbox" }
+        -- or { colorscheme = "tokyonight" }
 
     if entry.setup then pcall(entry.setup) end
 

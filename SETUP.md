@@ -1,50 +1,56 @@
-# Manual Setup
+# Setup details
 
-## 1. Install packer.nvim
+## Requirements
+
+- Neovim 0.12+ and Git.
+- A C compiler, make, curl and unzip for plugin/tool installation.
+- Tree-sitter CLI 0.26.1+ for installing parsers with current nvim-treesitter.
+- `ripgrep` and `fd` for Telescope searches.
+- `wl-clipboard` for Fedora KDE Wayland clipboard integration; `xclip` for X11.
+- Node/npm, Go and other runtimes as required by your chosen language servers.
+
+The companion dotfiles package installer covers the Fedora prerequisites.
+
+## Plugins
+
+Run `bash setup.sh` from this checkout. For manual bootstrap:
 
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+  "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/pack/packer/start/packer.nvim"
 ```
 
-## 2. Install plugins
+Then start Neovim and run `:PackerSync`. Missing-plugin errors can appear until
+that first sync finishes; the automated bootstrap avoids loading those settings
+prematurely. Restart Neovim after installation.
 
-Open the packer file inside Neovim and run `:PackerSync`:
+Generated Packer files must not be copied between macOS and Linux because they
+contain absolute paths. Each machine generates its own.
 
-```bash
-nvim lua/santos-404/packer.lua
-```
-```vim
-:PackerSync
-```
+## Language servers
 
-Wait for it to finish, then restart Neovim.
+This config uses **Mason and mason-lspconfig**, with automatic enabling of installed
+servers, plus native Neovim overrides under `lsp/`. Run `:Mason` to choose servers.
+Examples include `gopls`, `python-lsp-server`, `typescript-language-server` and
+`omnisharp`. .NET servers require a compatible .NET SDK installed separately.
+The custom Crashdummyy registry is retained from the existing local setup.
 
----
+For a server installed outside Mason, ensure its executable is on `PATH` and
+explicitly enable its config, for example `vim.lsp.enable('gopls')`.
+Use `:checkhealth vim.lsp` and `:checkhealth mason` to diagnose missing runtimes.
+Avoid system-wide `pip install`; use Mason or a dedicated virtual environment
+for Python language tools.
 
-## LSPs
+## Syntax parsers
 
-My current LSPs configuraition use Neovim's native LSP client, no mason, no lspconfig. Each LSP has its own config file in `lsp/` and must be enabled manually in `after/plugin/lsp.lua`.
+Run `:TSInstall lua python go javascript typescript tsx html css c_sharp` for the
+languages you use. Compiler and Tree-sitter CLI availability are required.
+Parsers are installed per machine, not stored in this repo.
 
-This selection is based on the languages I personally work on. It is heavily opinionated and not a recommendation for everyone. You can remove any of them, add new ones, or leave them all disabled.
-With the new Neovim API for LSPs, this will not throw any errors if an LSP binary is not installed or not enabled, so you can let it be as it isif you dont want to disable anything.
+## Appearance and platform notes
 
-**Available LSPs:**
-
-| LSP | Language | How to install |
-|-----|----------|----------------|
-| `gopls` | Go | `go install golang.org/x/tools/gopls@latest` |
-| `pylsp` | Python | `pip install python-lsp-server` |
-| `ts_ls` | TypeScript / JavaScript | `npm i -g typescript-language-server typescript` |
-| `omnisharp` | C# | [OmniSharp releases](https://github.com/OmniSharp/omnisharp-roslyn/releases) |
-
-To enable or disable an LSP, edit `after/plugin/lsp.lua`:
-
-```lua
--- LANGUAGES
-vim.lsp.enable('gopls')
-vim.lsp.enable('pylsp')
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('omnisharp')
-```
-
+Omarchy theme detection is optional and falls back to Gruvbox on Fedora KDE and
+macOS. Terminal transparency depends on your terminal/compositor settings.
+Use a Nerd Font in the terminal for all decorative glyphs. Ghostty bundles a
+suitable default font; other terminals may need a font installed and selected.
+Fedora KDE's global desktop theme and gaming setup are outside this repo.

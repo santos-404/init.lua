@@ -13,6 +13,9 @@ return require("packer").startup(function(use)
     use({ "hrsh7th/nvim-cmp" })
 
     use({ "hrsh7th/cmp-nvim-lsp" })
+    use({ "hrsh7th/cmp-buffer" })
+    use({ "hrsh7th/cmp-path" })
+    use({ "saadparwaiz1/cmp_luasnip" })
 
     use({ "L3MON4D3/LuaSnip", requires = { "rafamadriz/friendly-snippets" } })
 
@@ -27,7 +30,7 @@ return require("packer").startup(function(use)
     use("tpope/vim-fugitive")
 
     use({ "williamboman/mason.nvim" })
-    use({ "williamboman/mason-lspconfig.nvim" })
+    use({ "williamboman/mason-lspconfig.nvim", requires = { "neovim/nvim-lspconfig" } })
 
     use({ "sphamba/smear-cursor.nvim" })
 
@@ -56,6 +59,6 @@ return require("packer").startup(function(use)
     use({ "OldJobobo/miasma.nvim" })
     use({ "OldJobobo/retro-82.nvim" })
     use({ "omacom-io/lumon.nvim" })
-    use({ "gthelding/monokai-pro.nvim" }) 
+    use({ "loctvl842/monokai-pro.nvim" })
 
 end)
