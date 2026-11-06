@@ -3,8 +3,8 @@ require('lualine').setup({
         theme = 'auto',
         icons_enabled = true,
         globalstatus = true,
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = { statusline = { 'dashboard', 'alpha' } },
     },
     sections = {
@@ -13,7 +13,7 @@ require('lualine').setup({
         lualine_c = {
             {
                 'diagnostics',
-                symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+                symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
             },
             { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 0 } },
             { 'filename', path = 1 },
@@ -21,7 +21,7 @@ require('lualine').setup({
         lualine_x = {
             {
                 'diff',
-                symbols = { added = ' ', modified = ' ', removed = ' ' },
+                symbols = { added = '+', modified = '~', removed = '-' },
                 source = function()
                     local gs = vim.b.gitsigns_status_dict
                     if gs then
